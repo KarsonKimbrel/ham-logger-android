@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	>
+
+	<LinearLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical"
+		android:paddingTop="16dp"
+		android:paddingBottom="16dp"
+		>
+
+		<TextView
+			android:text="The Amateur Radio Logger app is developed and maintained by Karson Kimbrel, KA4SON. This app is intended to be a basic QSO logging application. As time and devolopment goes on I plan on adding many different features. Future planned features include: Dupe Checking, ADIF Import, Android-To-Android Syncing using WiFi direct for P2P Field Day operation, automatic callsign lookup for operator reports, distance calculation, and automatic gridsquare lookup."
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="8dp"
+			android:layout_marginStart="16dp"
+			android:layout_marginEnd="16dp"
+			style="@style/TextAppearance.AppCompat.Body1"
+			/>
+
+		<TextView
+			android:text="Thank you for downloading and using my app. This app is many months of work and freetime is hard to find, so that is why I decided to monotize this app. If you wish to remove ads or to support me further, you can purchase the premium in-app-purchase. The permium upgrade only removes ads. You may have to restart the app for the ads to go away."
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="8dp"
+			android:layout_marginStart="16dp"
+			android:layout_marginEnd="16dp"
+			style="@style/TextAppearance.AppCompat.Body1"
+			/>
+
+		<TextView
+			android:text="Contact Me"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="8dp"
+			android:layout_marginStart="16dp"
+			android:layout_marginEnd="16dp"
+			style="@style/TextAppearance.AppCompat.Large"
+			/>
+
+		<TextView
+			android:id="@+id/btn_email"
+			android:text="E-Mail"
+			android:layout_width="match_parent"
+			android:layout_height="48dp"
+			android:paddingStart="16dp"
+			android:paddingEnd="16dp"
+			android:layout_gravity="center_vertical"
+			android:gravity="center_vertical"
+			android:clickable="true"
+			android:background="?selectableItemBackground"
+			style="@style/TextAppearance.AppCompat.Medium"
+			/>
+
+		<TextView
+			android:id="@+id/btn_twitter"
+			android:text="Twitter"
+			android:layout_width="match_parent"
+			android:layout_height="48dp"
+			android:paddingStart="16dp"
+			android:paddingEnd="16dp"
+			android:layout_gravity="center_vertical"
+			android:gravity="center_vertical"
+			android:clickable="true"
+			android:background="?selectableItemBackground"
+			style="@style/TextAppearance.AppCompat.Medium"
+			/>
+
+		<TextView
+			android:id="@+id/btn_my_apps"
+			android:text="Apps By Me"
+			android:layout_width="match_parent"
+			android:layout_height="48dp"
+			android:paddingStart="16dp"
+			android:paddingEnd="16dp"
+			android:layout_gravity="center_vertical"
+			android:gravity="center_vertical"
+			android:clickable="true"
+			android:background="?selectableItemBackground"
+			style="@style/TextAppearance.AppCompat.Medium"
+			/>
+
+	</LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

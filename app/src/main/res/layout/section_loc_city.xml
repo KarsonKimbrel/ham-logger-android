@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/section_location"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:orientation="vertical"
+	>
+
+	<TextView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="Location"
+		style="@style/AppTheme.TextAppearance.Header"
+		/>
+
+	<com.google.android.material.textfield.TextInputLayout
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		>
+
+		<com.google.android.material.textfield.TextInputEditText
+			android:id="@+id/txt_loc_city_tx"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:maxLines="1"
+			android:inputType="text|textCapWords"
+			android:hint="City transmitted"
+			tools:text="Orlando"
+			/>
+
+	</com.google.android.material.textfield.TextInputLayout>
+
+	<LinearLayout
+		android:id="@+id/section_loc_city_tx"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:weightSum="2"
+		>
+
+		<com.google.android.material.textfield.TextInputLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			>
+
+			<com.google.android.material.textfield.TextInputEditText
+				android:id="@+id/txt_loc_state_tx"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:maxLines="1"
+				android:inputType="text|textCapWords"
+				android:hint="State/Prov. transmitted"
+				tools:text="FL"
+				/>
+
+		</com.google.android.material.textfield.TextInputLayout>
+
+		<com.google.android.material.textfield.TextInputLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			>
+
+			<com.google.android.material.textfield.TextInputEditText
+				android:id="@+id/txt_loc_country_tx"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:inputType="text|textCapWords"
+				android:hint="Country transmitted"
+				android:maxLines="1"
+				tools:text="US"
+				/>
+
+		</com.google.android.material.textfield.TextInputLayout>
+
+	</LinearLayout>
+
+	<com.google.android.material.textfield.TextInputLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		>
+
+		<com.google.android.material.textfield.TextInputEditText
+			android:id="@+id/txt_loc_city_rx"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:inputType="text|textCapWords"
+			android:hint="City received"
+			android:maxLines="1"
+			tools:text="New York City"
+			/>
+
+	</com.google.android.material.textfield.TextInputLayout>
+
+	<LinearLayout
+		android:id="@+id/section_loc_city_rx"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:weightSum="2"
+		>
+
+		<com.google.android.material.textfield.TextInputLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			>
+
+			<com.google.android.material.textfield.TextInputEditText
+				android:id="@+id/txt_loc_state_rx"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:maxLines="1"
+				android:inputType="text|textCapWords"
+				android:hint="State/Prov. received"
+				tools:text="NY"
+				/>
+
+		</com.google.android.material.textfield.TextInputLayout>
+
+		<com.google.android.material.textfield.TextInputLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			>
+
+			<com.google.android.material.textfield.TextInputEditText
+				android:id="@+id/txt_loc_country_rx"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:maxLines="1"
+				android:inputType="text|textCapWords"
+				android:hint="Country received"
+				tools:text="US"
+				/>
+
+		</com.google.android.material.textfield.TextInputLayout>
+
+	</LinearLayout>
+
+</LinearLayout>

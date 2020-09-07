@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<manifest
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:installLocation="auto"
+	package="com.kimbrelk.android.hamlogger"
+	>
+
+	<uses-permission
+		android:name="android.permission.ACCESS_NETWORK_STATE"
+		/>
+
+	<uses-permission
+		android:name="android.permission.INTERNET"
+		/>
+
+	<uses-permission
+		android:name="android.permission.READ_EXTERNAL_STORAGE"
+		/>
+
+	<uses-permission
+		android:name="android.permission.READ_PHONE_STATE"
+		tools:node="remove"
+		/>
+
+	<uses-permission
+		android:name="android.permission.WAKE_LOCK"
+		/>
+
+	<uses-permission
+		android:name="com.android.vending.BILLING"
+		/>
+
+	<supports-screens
+		android:anyDensity="true"
+		android:largeScreens="true"
+		android:normalScreens="true"
+		android:resizeable="true"
+		android:smallScreens="true"
+		android:xlargeScreens="true"
+		/>
+
+	<application
+		android:name=".HamLoggerApplication"
+		android:allowBackup="true"
+		android:icon="@mipmap/ic_launcher"
+		android:label="@string/app_name"
+		android:supportsRtl="true"
+		android:resizeableActivity="true"
+		android:theme="@style/AppTheme"
+		>
+
+		<meta-data
+			android:name="com.google.android.gms.ads.APPLICATION_ID"
+			android:value="ca-app-pub-7521087560773308~6461464245"
+			/>
+
+		<activity
+			android:name=".ui.mainactivity.MainActivity"
+			>
+
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN"/>
+				<category android:name="android.intent.category.LAUNCHER"/>
+			</intent-filter>
+
+		</activity>
+
+		<activity
+			android:name=".activity.ActivityMain"
+			android:alwaysRetainTaskState="true"
+			>
+
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+			</intent-filter>
+
+		</activity>
+
+		<activity
+			android:name=".activity.AboutActivity"
+			android:alwaysRetainTaskState="true"
+			>
+
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN"/>
+				<category android:name="android.intent.category.DEFAULT"/>
+			</intent-filter>
+
+		</activity>
+
+		<service
+			android:name=".service.LegacyServiceAuth"
+			android:label="In-App-Purchase Authenticator"
+			/>
+
+		<provider
+			android:name="androidx.core.content.FileProvider"
+			android:authorities="com.kimbrelk.android.hamlogger.fileprovider"
+			android:grantUriPermissions="true"
+			android:exported="false"
+			>
+
+			<meta-data
+				android:name="android.support.FILE_PROVIDER_PATHS"
+				android:resource="@xml/filepaths"
+				/>
+
+		</provider>
+
+	</application>
+
+</manifest>

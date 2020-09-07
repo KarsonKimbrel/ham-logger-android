@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	>
+
+	<androidx.core.widget.NestedScrollView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		>
+
+		<LinearLayout
+			xmlns:android="http://schemas.android.com/apk/res/android"
+			xmlns:tools="http://schemas.android.com/tools"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:orientation="vertical"
+			android:padding="16dp"
+			>
+
+			<com.google.android.material.textfield.TextInputLayout
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				>
+
+				<com.google.android.material.textfield.TextInputEditText
+					android:id="@+id/txt_title"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:inputType="text|textCapWords"
+					android:hint="@string/hint_logbook_name"
+					tools:text="@string/lorem_title"
+					/>
+
+			</com.google.android.material.textfield.TextInputLayout>
+
+			<com.google.android.material.textfield.TextInputLayout
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				>
+
+				<com.google.android.material.textfield.TextInputEditText
+					android:id="@+id/txt_call"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:hint="@string/hint_logbook_owner"
+					android:inputType="text|textCapCharacters"
+					tools:text="@string/lorem_call"
+					/>
+
+			</com.google.android.material.textfield.TextInputLayout>
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="@string/section_preferences"
+				style="@style/AppTheme.TextAppearance.Header"
+				/>
+
+			<androidx.appcompat.widget.SwitchCompat
+				android:id="@+id/swt_same_call"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="@string/hint_callsign_differs"
+				style="@style/AppTheme.Switch"
+				/>
+
+			<androidx.appcompat.widget.SwitchCompat
+				android:id="@+id/swt_show_section_contest_fieldday"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="@string/hint_show_contest_fieldday"
+				style="@style/AppTheme.Switch"
+				/>
+
+			<androidx.appcompat.widget.SwitchCompat
+				android:id="@+id/swt_show_section_comments"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="@string/hint_show_comments"
+				style="@style/AppTheme.Switch"
+				/>
+
+			<androidx.appcompat.widget.SwitchCompat
+				android:id="@+id/swt_show_section_location_grid"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="@string/hint_show_grid"
+				style="@style/AppTheme.Switch"
+				/>
+
+			<com.google.android.material.textfield.TextInputLayout
+				android:id="@+id/layout_location_grid_tx"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				>
+
+				<com.google.android.material.textfield.TextInputEditText
+					android:id="@+id/txt_location_grid_tx"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:hint="@string/hint_grid"
+					android:inputType="text|textCapCharacters"
+					tools:text="@string/lorem_grid"
+					/>
+
+			</com.google.android.material.textfield.TextInputLayout>
+
+			<androidx.appcompat.widget.SwitchCompat
+				android:id="@+id/swt_show_section_location_city"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="Show cities"
+				android:visibility="gone"
+				style="@style/AppTheme.Switch"
+				/>
+
+			<androidx.appcompat.widget.SwitchCompat
+				android:id="@+id/swt_show_section_power"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="@string/hint_show_power"
+				style="@style/AppTheme.Switch"
+				/>
+
+			<androidx.appcompat.widget.SwitchCompat
+				android:id="@+id/swt_show_section_signal"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="@string/hint_show_signal"
+				style="@style/AppTheme.Switch"
+				/>
+
+			<androidx.appcompat.widget.SwitchCompat
+				android:id="@+id/swt_show_utc"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="@string/hint_show_utc"
+				style="@style/AppTheme.Switch"
+				/>
+
+		</LinearLayout>
+
+	</androidx.core.widget.NestedScrollView>
+
+	<LinearLayout
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentEnd="true"
+		android:layout_alignParentRight="true"
+		android:layout_alignParentBottom="true"
+		>
+
+		<com.google.android.material.floatingactionbutton.FloatingActionButton
+			android:id="@+id/fab"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_margin="16dp"
+			android:padding="16dp"
+			android:src="@drawable/ic_check"
+			android:tint="@color/mat_white"
+			/>
+
+	</LinearLayout>
+
+</RelativeLayout>

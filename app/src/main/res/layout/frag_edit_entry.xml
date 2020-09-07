@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	>
+
+	<androidx.core.widget.NestedScrollView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		>
+
+		<LinearLayout
+			xmlns:android="http://schemas.android.com/apk/res/android"
+			xmlns:tools="http://schemas.android.com/tools"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:orientation="vertical"
+			android:padding="16dp"
+			>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal"
+				android:weightSum="2"
+				>
+
+				<com.google.android.material.textfield.TextInputLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					>
+
+					<com.google.android.material.textfield.TextInputEditText
+						android:id="@+id/txt_date"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:focusable="false"
+						android:focusableInTouchMode="false"
+						android:clickable="true"
+						android:maxLines="1"
+						android:hint="@string/hint_date"
+						tools:text="@string/lorem_date"
+						/>
+
+				</com.google.android.material.textfield.TextInputLayout>
+
+				<com.google.android.material.textfield.TextInputLayout
+					android:id="@+id/layout_time"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					>
+
+					<com.google.android.material.textfield.TextInputEditText
+						android:id="@+id/txt_time"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:focusable="false"
+						android:focusableInTouchMode="false"
+						android:clickable="true"
+						android:hint="@string/hint_time"
+						android:maxLines="1"
+						tools:text="@string/lorem_time"
+						/>
+
+				</com.google.android.material.textfield.TextInputLayout>
+
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal"
+				android:weightSum="2"
+				>
+
+				<com.google.android.material.textfield.TextInputLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					>
+
+					<com.google.android.material.textfield.TextInputEditText
+						android:id="@+id/txt_freq"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:maxLines="1"
+						android:inputType="number|numberDecimal"
+						android:hint="@string/hint_frequency"
+						tools:text="@string/lorem_freq_short"
+						/>
+
+				</com.google.android.material.textfield.TextInputLayout>
+
+				<com.google.android.material.textfield.TextInputLayout
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					>
+
+					<com.kimbrelk.android.hamlogger.view.ClickToSelectEditText
+						android:id="@+id/txt_mode"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:maxLines="1"
+						android:inputType="text|textCapCharacters|textNoSuggestions"
+						android:hint="@string/hint_mode"
+						tools:text="@string/lorem_mode"
+						/>
+
+				</com.google.android.material.textfield.TextInputLayout>
+
+			</LinearLayout>
+
+			<ViewStub
+				android:id="@+id/stub_section_callsigns_2"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout="@layout/section_callsigns_2"
+				/>
+
+			<ViewStub
+				android:id="@+id/stub_section_callsigns_3"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout="@layout/section_callsigns_3"
+				/>
+
+			<ViewStub
+				android:id="@+id/stub_section_contest_fieldday"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout="@layout/section_contest_fieldday"
+				/>
+
+			<ViewStub
+				android:id="@+id/stub_section_power"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout="@layout/section_power"
+				/>
+
+			<ViewStub
+				android:id="@+id/stub_section_signal"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout="@layout/section_signal"
+				/>
+
+			<ViewStub
+				android:id="@+id/stub_section_loc_grid"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout="@layout/section_loc_grid"
+				/>
+
+			<ViewStub
+				android:id="@+id/stub_section_loc_city"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout="@layout/section_loc_city"
+				/>
+
+			<ViewStub
+				android:id="@+id/stub_section_comments"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout="@layout/section_comments"
+				/>
+
+		</LinearLayout>
+
+	</androidx.core.widget.NestedScrollView>
+
+	<LinearLayout
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentEnd="true"
+		android:layout_alignParentRight="true"
+		android:layout_alignParentBottom="true"
+		>
+
+		<com.google.android.material.floatingactionbutton.FloatingActionButton
+			android:id="@+id/fab"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_margin="16dp"
+			android:padding="16dp"
+			android:src="@drawable/ic_check"
+			android:tint="@color/mat_white"
+			/>
+
+	</LinearLayout>
+
+</RelativeLayout>

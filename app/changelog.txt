@@ -1,0 +1,104 @@
+Ham Logger Changelog
+[YYYY-MM-DD - Version]
+
+[2018-??-?? - 0.24(24) - Internal]
+
+[2018-11-21 - 0.23(23) - Release]
+	Fixed incomplete import if the comments/notes have a single quote
+
+[2018-11-19 - 0.22(22) - Release]
+	Fixed crash caused by single quotes in SQL INSERT statement
+
+[2018-11-19 - 0.21(21) - Internal]
+	Added winter field day support
+	Removed comments for advertising id
+
+[2018-10-31 - 0.20(20) - Release]
+	Fixed crash
+
+[2018-10-31 - 0.19(19) - Internal]
+	Fixed crashes
+
+[2018-10-31 - 0.18(18) - Internal]
+	Fixed crash when importing
+
+[2018-09-20 - 0.17(17) - Release]
+	Removed ad id tracking
+
+[2018-05-25 - 0.16(16) - Release]
+	Disabled ads
+
+[2018-05-25 - 0.15(15) - Alpha]
+	Improved ADI export by providing non intl comments and notes
+	GDPR Compliance
+		Ads are no longer personalized
+
+[2018-04-18 - 0.14(14) - Alpha]
+	Added ADIF import
+	ADIF Export bug fixes
+
+[2017-12-22 - 0.13(13) - Release]
+	Pressing up on data entry screens will now confirm discard / save
+
+[2017-12-21 - 0.12(12) - Release]
+	Added empty cards
+	Added check to complete data and discard confirmation dialog
+
+[2017-12-21 - 0.11(11) - Release]
+	Fixed firebase user ad id
+
+[2017-12-21 - 0.10(10) - Release]
+	Set user id on app start
+	Flagged user as first time user on start
+	Fixed null pointer crash in FragmentBooks.readBooks()
+
+[2017-12-20 - 0.9(9) - Release]
+	Updated icon with new clipboard colors
+	Removed storage permissions
+	Added Received comments field
+	Added hints for the next text box on all of the current text boxes
+	When the app starts, and there are no logbooks, it will start on the create logbook screen
+	Added couchbase analytics
+
+[2017-12-19 - 0.8(8) - Alpha]
+	Fixed FAB padding when the ad is not present
+	Fixed SQL injection bug on the logbook settings screen
+	Added new icon
+
+[2017-12-19 - 0.7(7) - Alpha]
+	Added firebase linking on the backend
+	Added real ad unit id
+	Made white clipboard hole in the icon transparent
+
+[2017-12-18 - 0.6(6) - Alpha]
+	Removed location permission
+	Added new logo
+	Added gridsquares to search
+	Added IAB
+
+[2017-12-18 - 0.5(5) - Alpha]
+	Fixed crash with invalid frequency input
+	Added billing permission
+
+[2017-12-15 - 0.4(4) - Alpha]
+	Added initial icon
+
+[2017-12-15 - 0.3(3) - Alpha]
+	Added Export ADIF/ADI
+	Changed contest class and contest section to dropdowns
+	Added entry search
+	Added entry sorting
+	Added band field to entries screen
+
+[2017-10-10 - 0.2(2) - Pre-Alpha]
+	Added mode dropdown
+	Added submodes
+	Added mode and submode model
+	Timezone is now correctly shown above time
+	Removed autocorrect underlines
+
+[2017-10-08 - 0.1(1) - Pre-Alpha]
+	Sent minimal viable product to Anson
+	Sort, search, filter, import, export, P2P, cloud sync, loc_city, are not implemented
+	Field Day is the only valid contest
+	Support for club books

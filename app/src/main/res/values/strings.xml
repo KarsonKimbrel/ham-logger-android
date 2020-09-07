@@ -1,0 +1,95 @@
+<resources>
+	<string name="app_name">Ham Logger</string>
+	
+	<string-array name="arrl_classes">
+		<item>A</item>
+		<item>B</item>
+		<item>C</item>
+		<item>D</item>
+		<item>E</item>
+		<item>F</item>
+		<item>I</item>
+		<item>H</item>
+		<item>O</item>
+	</string-array>
+
+	<string name="ads_disabled">Ads are disabled temporarily</string>
+	<string name="non_amateur">Non-Amateur</string>
+
+	<!-- Defaults -->
+	<string name="default_book_title">My QSOs</string>
+
+	<!-- Menu -->
+	<string name="action_go_pro">Go pro</string>
+	<string name="action_privacy_policy">Privacy policy</string>
+	<string name="action_rate">Rate</string>
+
+	<!-- Screen Titles -->
+	<string name="screen_about">About</string>
+	<string name="screen_books">Log Books</string>
+	<string name="screen_book_edit">Edit Log Book</string>
+	<string name="screen_book_new">New Log Book</string>
+	<string name="screen_entry_edit">Edit Log Entry</string>
+	<string name="screen_entry_new">New Log Entry</string>
+
+	<!-- Empty Cards -->
+	<string name="card_nobooks_title">Create a new logbook</string>
+	<string name="card_nobooks_desc">You do not have a logbook yet. Click on the + button bellow to get started.</string>
+	<string name="card_noentries_title">Create a new log entry</string>
+	<string name="card_noentries_desc">You have not created a log entry in this logbook yet. Click on the + button bellow to get started.</string>
+
+	<!-- Headers -->
+	<string name="section_callsigns">Callsigns</string>
+	<string name="section_comments">Comments</string>
+	<string name="section_contest_fieldday">Field Day</string>
+	<string name="section_grid">Grid square</string>
+	<string name="section_power">Power report</string>
+	<string name="section_preferences">Preferences</string>
+	<string name="section_signal">Signal report</string>
+
+	<!-- Hints -->
+	<string name="hint_callsign_differs">Operator\'s callsign may differ from above</string>
+	<string name="hint_contest_fieldday_class">Class</string>
+	<string name="hint_contest_fieldday_section">Section</string>
+	<string name="hint_contest_fieldday_transmitters">Transmitters</string>
+	<string name="hint_date">Date</string>
+	<string name="hint_frequency">Frequency (MHz)</string>
+	<string name="hint_grid">Grid square</string>
+	<string name="hint_logbook_name">Logbook name</string>
+	<string name="hint_logbook_owner">Logbook owner\'s callsign</string>
+	<string name="hint_mode">Mode</string>
+	<string name="hint_no_call">No callsign</string>
+	<string name="hint_operator">Operator</string>
+	<string name="hint_received">Received</string>
+	<string name="hint_show_comments">Show comments</string>
+	<string name="hint_show_contest_fieldday">Show ARRL Fieldday contest exchange</string>
+	<string name="hint_show_grid">Show grid squares</string>
+	<string name="hint_show_power">Show power reports</string>
+	<string name="hint_show_signal">Show signal reports</string>
+	<string name="hint_show_utc">Use UTC timezone</string>
+	<string name="hint_time">Time</string>
+	<string name="hint_time_x">Time (%s)</string>
+	<string name="hint_transmitted">Transmitted</string>
+	<string name="hint_untitled_book">Untitled logbook</string>
+
+	<!-- Dialogs -->
+	<string name="dialog_unsaved_title">Your changes have not been saved</string>
+	<string name="dialog_choice_discard">DISCARD</string>
+	<string name="dialog_choice_save">SAVE</string>
+
+	<!-- Lorem Ipsum -->
+	<string name="lorem_band" translatable="false">20m</string>
+	<string name="lorem_call" translatable="false">T3ST</string>
+	<string name="lorem_date" translatable="false">9/25/2017</string>
+	<string name="lorem_freq" translatable="false">14.313 MHz</string>
+	<string name="lorem_freq_short" translatable="false">14.313</string>
+	<string name="lorem_grid" translatable="false">EL98</string>
+	<string name="lorem_long" translatable="false">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+	<string name="lorem_mode" translatable="false">FT8</string>
+	<string name="lorem_power" translatable="false">50</string>
+	<string name="lorem_short" translatable="false">Lorem ipsum dolor sit amet.</string>
+	<string name="lorem_signal" translatable="false">599</string>
+	<string name="lorem_time" translatable="false">12:30 PM</string>
+	<string name="lorem_title" translatable="false">Lorem Ipsum</string>
+
+</resources>

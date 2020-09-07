@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/section_comments"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:orientation="vertical"
+	>
+
+	<TextView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="@string/section_comments"
+		style="@style/AppTheme.TextAppearance.Header"
+		/>
+
+	<com.google.android.material.textfield.TextInputLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		>
+
+		<com.google.android.material.textfield.TextInputEditText
+			android:id="@+id/txt_comments_tx"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:inputType="text|textCapSentences|textMultiLine"
+			android:hint="@string/hint_transmitted"
+			tools:text="@string/lorem_long"
+			/>
+
+	</com.google.android.material.textfield.TextInputLayout>
+
+	<com.google.android.material.textfield.TextInputLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		>
+
+		<com.google.android.material.textfield.TextInputEditText
+			android:id="@+id/txt_comments_rx"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:inputType="text|textCapSentences|textMultiLine"
+			android:hint="@string/hint_received"
+			tools:text="@string/lorem_short"
+			/>
+
+	</com.google.android.material.textfield.TextInputLayout>
+
+</LinearLayout>

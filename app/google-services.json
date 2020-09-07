@@ -1,0 +1,55 @@
+{
+	"project_info": {
+		"project_number": "448744193796",
+		"firebase_url": "https://ham-logger-ac719.firebaseio.com",
+		"project_id": "ham-logger-ac719",
+		"storage_bucket": "ham-logger-ac719.appspot.com"
+	},
+	"client": [
+		{
+			"client_info": {
+				"mobilesdk_app_id": "1:448744193796:android:ce0ee6ae59d596ce",
+				"android_client_info": {
+					"package_name": "com.kimbrelk.android.hamlogger"
+				}
+			},
+			"oauth_client": [
+				{
+					"client_id": "448744193796-d57ln8lf8oa542v62jidrnk45fften57.apps.googleusercontent.com",
+					"client_type": 1,
+					"android_info": {
+						"package_name": "com.kimbrelk.android.hamlogger",
+						"certificate_hash": "8fc0a5c6502daf313171784c8d612586ffcf4578"
+					}
+				},
+				{
+					"client_id": "448744193796-7c229ben213p574ohfgjm7kgmugrgmis.apps.googleusercontent.com",
+					"client_type": 3
+				}
+			],
+			"api_key": [
+				{
+					"current_key": "AIzaSyDBmb7ZJg4qMTxPxe2dDKCu9zhrz_LQ9Ss"
+				}
+			],
+			"services": {
+				"analytics_service": {
+					"status": 1
+				},
+				"appinvite_service": {
+					"status": 2,
+					"other_platform_oauth_client": [
+						{
+							"client_id": "448744193796-7c229ben213p574ohfgjm7kgmugrgmis.apps.googleusercontent.com",
+							"client_type": 3
+						}
+					]
+				},
+				"ads_service": {
+					"status": 2
+				}
+			}
+		}
+	],
+	"configuration_version": "1"
+}

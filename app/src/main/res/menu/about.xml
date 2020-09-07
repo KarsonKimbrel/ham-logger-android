@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	>
+
+	<item
+		android:id="@+id/action_go_pro"
+		android:title="@string/action_go_pro"
+		android:showAsAction="always|withText"
+		android:icon="@drawable/ic_attach_money_white_24dp"
+		android:visible="false"
+		app:showAsAction="always|withText"
+		app:icon="@drawable/ic_attach_money_white_24dp"
+		/>
+
+	<item
+		android:id="@+id/action_rate"
+		android:title="@string/action_rate"
+		android:showAsAction="always|withText"
+		android:icon="@drawable/ic_star_half_white_24dp"
+		app:showAsAction="always|withText"
+		app:icon="@drawable/ic_star_half_white_24dp"
+		/>
+
+	<item
+		android:id="@+id/action_privacy_policy"
+		android:title="@string/action_privacy_policy"
+		android:showAsAction="never"
+		app:showAsAction="never"
+		/>
+
+</menu>

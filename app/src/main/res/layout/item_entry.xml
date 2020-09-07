@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:orientation="horizontal"
+	android:padding="16dp"
+	android:weightSum="3"
+	android:gravity="bottom"
+	android:background="?selectableItemBackground"
+	tools:background="#eeeeee"
+	>
+
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="match_parent"
+		android:layout_weight="1"
+		android:orientation="vertical"
+		android:gravity="bottom"
+		android:layout_gravity="bottom"
+		>
+
+		<TextView
+			android:id="@+id/txt_call"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_gravity="bottom"
+			tools:text="@string/lorem_call"
+			style="@style/TextAppearance.AppCompat.Large"
+			/>
+
+		<TextView
+			android:id="@+id/txt_freq"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_gravity="bottom"
+			tools:text="@string/lorem_freq"
+			style="@style/TextAppearance.AppCompat.Small"
+			/>
+
+	</LinearLayout>
+
+
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="match_parent"
+		android:layout_weight="1"
+		android:orientation="vertical"
+		android:layout_gravity="bottom|center_horizontal"
+		android:gravity="bottom|center_horizontal"
+		>
+
+		<TextView
+			android:id="@+id/txt_mode"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_gravity="bottom|center_horizontal"
+			android:gravity="bottom|center_horizontal"
+			tools:text="@string/lorem_mode"
+			style="@style/TextAppearance.AppCompat.Small"
+			/>
+
+		<TextView
+			android:id="@+id/txt_band"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_gravity="bottom|center_horizontal"
+			android:gravity="bottom|center_horizontal"
+			tools:text="@string/lorem_band"
+			style="@style/TextAppearance.AppCompat.Small"
+			/>
+
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="match_parent"
+		android:layout_weight="1"
+		android:orientation="vertical"
+		android:layout_gravity="bottom"
+		android:gravity="bottom"
+		>
+
+		<TextView
+			android:id="@+id/txt_date"
+			style="@style/TextAppearance.AppCompat.Small"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:gravity="bottom|right"
+			tools:text="@string/lorem_date"
+			/>
+
+		<TextView
+			android:id="@+id/txt_time"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:gravity="bottom|right"
+			tools:text="@string/lorem_time"
+			style="@style/TextAppearance.AppCompat.Small"
+			/>
+
+	</LinearLayout>
+
+</LinearLayout>

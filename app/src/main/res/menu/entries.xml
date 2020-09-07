@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	>
+	
+	<item
+		android:id="@+id/action_search"
+		android:title="Search logs"
+		android:icon="@drawable/ic_search"
+		app:actionViewClass="androidx.appcompat.widget.SearchView"
+		app:showAsAction="collapseActionView|always"
+		android:visible="false"
+		/>
+	
+	<item
+		android:id="@+id/action_filter"
+		android:title="Filter"
+		android:icon="@drawable/ic_filter"
+		android:iconTint="@color/mat_white"
+		android:visible="false"
+		app:iconTint="@color/mat_white"
+		app:showAsAction="always"
+		/>
+	
+	<item
+		android:id="@+id/action_sort"
+		android:title="Sort"
+		android:icon="@drawable/ic_sort"
+		android:iconTint="@color/mat_white"
+		app:iconTint="@color/mat_white"
+		app:showAsAction="always"
+		>
+
+		<menu>
+
+			<item
+				android:id="@+id/action_sort_by_call"
+				android:title="By callsign"
+				/>
+
+			<item
+				android:id="@+id/action_sort_by_date"
+				android:title="By date"
+				/>
+
+			<item
+				android:id="@+id/action_sort_by_freq"
+				android:title="By frequency"
+				/>
+
+		</menu>
+
+	</item>
+
+	<item
+		android:icon="@drawable/ic_import_export"
+		android:iconTint="@color/mat_white"
+		android:title="Import/export logbook"
+		app:iconTint="@color/mat_white"
+		>
+
+		<menu>
+
+			<item
+				android:title="Export"
+				>
+
+				<menu>
+
+					<item
+						android:title="AIDF"
+						>
+
+						<menu>
+
+							<item
+								android:id="@+id/action_export_adi"
+								android:title="ADI"
+								/>
+
+							<item
+								android:id="@+id/action_export_adx"
+								android:title="ADX"
+								android:visible="false"
+								/>
+
+						</menu>
+
+					</item>
+
+					<item
+						android:id="@+id/action_export_csv"
+						android:title="CSV (export only)"
+						android:visible="false"
+						/>
+
+				</menu>
+
+			</item>
+
+			<item
+				android:title="Import"
+				>
+
+				<menu>
+
+					<item
+						android:title="ADIF"
+						>
+
+						<menu>
+
+							<item
+								android:id="@+id/action_import_adi"
+								android:title="ADI"
+								/>
+
+							<item
+								android:id="@+id/action_import_adx"
+								android:title="ADX"
+								android:visible="false"
+								/>
+
+						</menu>
+
+					</item>
+
+				</menu>
+
+			</item>
+
+		</menu>
+
+	</item>
+	<item
+		android:id="@+id/action_prefs_logbook"
+		android:title="Logbook Settings"
+		android:icon="@drawable/ic_settings"
+		android:iconTint="@color/mat_white"
+		app:iconTint="@color/mat_white"
+		app:showAsAction="never"
+		/>
+
+</menu>

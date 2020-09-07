@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/section_contest_fieldday"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:orientation="vertical"
+	>
+
+	<TextView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="@string/section_contest_fieldday"
+		style="@style/AppTheme.TextAppearance.Header"
+		/>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:weightSum="3"
+		>
+		
+		<com.google.android.material.textfield.TextInputLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			>
+			
+			<com.google.android.material.textfield.TextInputEditText
+				android:id="@+id/txt_contest_class_transmitters"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:maxLines="1"
+				android:inputType="number"
+				android:hint="@string/hint_contest_fieldday_transmitters"
+				android:imeOptions="actionNext"
+				tools:text="2"
+				/>
+		
+		</com.google.android.material.textfield.TextInputLayout>
+		
+		<com.google.android.material.textfield.TextInputLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:orientation="vertical"
+			android:layout_gravity="bottom"
+			>
+			
+			<com.kimbrelk.android.hamlogger.view.ClickToSelectEditText
+				android:id="@+id/txt_contest_class"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:inputType="text|textCapCharacters|textNoSuggestions"
+				android:hint="@string/hint_contest_fieldday_class"
+				tools:text="A"
+				/>
+		
+		</com.google.android.material.textfield.TextInputLayout>
+		
+		<com.google.android.material.textfield.TextInputLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			>
+			
+			<com.kimbrelk.android.hamlogger.view.ClickToSelectEditText
+				android:id="@+id/txt_contest_section"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:maxLines="1"
+				android:inputType="text|textCapCharacters|textNoSuggestions"
+				android:hint="@string/hint_contest_fieldday_section"
+				tools:text="NFL"
+				/>
+		
+		</com.google.android.material.textfield.TextInputLayout>
+
+	</LinearLayout>
+
+</LinearLayout>
