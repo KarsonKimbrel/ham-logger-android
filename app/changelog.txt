@@ -1,7 +1,13 @@
 Ham Logger Changelog
 [YYYY-MM-DD - Version]
 
-[2018-??-?? - 0.24(24) - Internal]
+[2020-09-21 - 0.25(25) - Release]
+    Kotlin rewrite (~95%)
+    Improved ADIF import
+    Option to enter and view times in UTC
+
+[2018-??-?? - 0.24(24) - Release]
+    Added privacy policy
 
 [2018-11-21 - 0.23(23) - Release]
 	Fixed incomplete import if the comments/notes have a single quote
