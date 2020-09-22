@@ -16,8 +16,24 @@ import kotlinx.coroutines.launch
 
 class ViewModelEntrylist(application: Application) : BaseViewModel(application) {
 
-    private var entriesListData: MediatorLiveData<List<Entry>>? = null
+    private var entriesListData: MediatorLiveData<List<Entry>>? = MediatorLiveData<List<Entry>>()
     private var entryLiveDataSources: Map<SortMode, LiveData<List<Entry>>>? = null
+
+    lateinit var bookId: String
+    var searchQuery: String = ""
+        set(query) {
+            field = query
+            updateEntryData()
+        }
+    var sortMode : SortMode
+        get() = SortMode.valueOf(prefs.getString(Constants.Prefs.SORT_MODE, SortMode.Date.name)!!)
+        set(value) {
+            prefs.edit()
+                .putString(Constants.Prefs.SORT_MODE, value.name)
+                .apply()
+            updateEntryData()
+        }
+
 
     fun createEntry(book: Book) : Entry {
         val entry = Entry(
@@ -35,43 +51,32 @@ class ViewModelEntrylist(application: Application) : BaseViewModel(application) 
         return entry
     }
 
-    fun getBook(bookId: String) : LiveData<Book?> {
+    fun getBook() : LiveData<Book?> {
         return appRepository.getBook(bookId)
     }
 
-    fun getEntries(bookId: String) : LiveData<List<Entry>> {
-        entryLiveDataSources = appRepository.getEntries(bookId)
-        entriesListData = MediatorLiveData<List<Entry>>()
-        updateEntrySort(sortMode)
+    fun getEntries() : LiveData<List<Entry>> {
+        updateEntryData()
         return entriesListData as LiveData<List<Entry>>
     }
 
-    fun adiExport(bookId: String) {
+    fun adiExport() {
         viewModelScope.launch {
             appRepository.adiExport(bookId)
         }
     }
 
-    fun adiImport(context: Context, uri: Uri, bookId: String) {
+    fun adiImport(context: Context, uri: Uri) {
         viewModelScope.launch {
             appRepository.adiImport(context, uri, bookId)
         }
     }
-
-    var sortMode : SortMode
-        get() = SortMode.valueOf(prefs.getString(Constants.Prefs.SORT_MODE, SortMode.Date.name)!!)
-        set(value) {
-            prefs.edit()
-                .putString(Constants.Prefs.SORT_MODE, value.name)
-                .apply()
-            updateEntrySort(value)
-        }
-
-    private fun updateEntrySort(sort: SortMode) {
+    private fun updateEntryData() {
+        entryLiveDataSources = appRepository.getEntries(bookId, "%$searchQuery%")
         for (pair in entryLiveDataSources!!) {
             entriesListData!!.removeSource(pair.value)
         }
-        val source: LiveData<List<Entry>> = entryLiveDataSources!![sort] ?: error("Unknown sort mode")
+        val source: LiveData<List<Entry>> = entryLiveDataSources!![sortMode] ?: error("Unknown sort mode")
         entriesListData!!.addSource(source, Observer { value -> entriesListData!!.setValue(value) })
     }
 

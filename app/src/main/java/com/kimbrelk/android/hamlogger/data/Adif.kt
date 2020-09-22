@@ -261,7 +261,7 @@ class Adif {
                 val buffer = StringBuffer("")
                 var inputStream: InputStream? = null
                 try {
-                    inputStream = context.contentResolver.openInputStream(uri)
+                    inputStream = context.contentResolver.openInputStream(uri)!!
                     var char: Char
                     while (inputStream.read().also { char = it.toChar() } != -1) {
                         buffer.append(char)

@@ -14,22 +14,22 @@ interface EntryDao : BaseDao<Entry> {
     @Query("SELECT * FROM entry WHERE id = :entryId and bookId = :bookId LIMIT 1")
     fun get(bookId: String, entryId: String) : LiveData<Entry?>
 
-    fun getAll(bookId: String) : Map<SortMode, LiveData<List<Entry>>> {
+    fun getAll(bookId: String, searchQuery: String) : Map<SortMode, LiveData<List<Entry>>> {
         return mapOf(
-            Pair(SortMode.Callsign, getAllByCallsign(bookId)),
-            Pair(SortMode.Date, getAllByDate(bookId)),
-            Pair(SortMode.Frequency, getAllByFrequency(bookId))
+            Pair(SortMode.Callsign, getAllByCallsign(bookId, searchQuery)),
+            Pair(SortMode.Date, getAllByDate(bookId, searchQuery)),
+            Pair(SortMode.Frequency, getAllByFrequency(bookId, searchQuery))
         )
     }
 
-    @Query("SELECT * FROM entry WHERE bookId = :bookId ORDER BY callRx ASC, timestamp DESC")
-    fun getAllByCallsign(bookId: String) : LiveData<List<Entry>>
+    @Query("SELECT * FROM entry WHERE bookId = :bookId AND (callRx LIKE :searchQuery OR callOp LIKE :searchQuery OR commentsRx LIKE :searchQuery OR commentsTx LIKE :searchQuery OR mode LIKE :searchQuery OR modeSub LIKE :searchQuery) ORDER BY callRx ASC, timestamp DESC")
+    fun getAllByCallsign(bookId: String, searchQuery: String) : LiveData<List<Entry>>
 
-    @Query("SELECT * FROM entry WHERE bookId = :bookId ORDER BY timestamp DESC")
-    fun getAllByDate(bookId: String) : LiveData<List<Entry>>
+    @Query("SELECT * FROM entry WHERE bookId = :bookId AND (callRx LIKE :searchQuery OR callOp LIKE :searchQuery OR commentsRx LIKE :searchQuery OR commentsTx LIKE :searchQuery OR mode LIKE :searchQuery OR modeSub LIKE :searchQuery) ORDER BY timestamp DESC")
+    fun getAllByDate(bookId: String, searchQuery: String) : LiveData<List<Entry>>
 
-    @Query("SELECT * FROM entry WHERE bookId = :bookId ORDER BY frequency ASC, timestamp DESC")
-    fun getAllByFrequency(bookId: String) : LiveData<List<Entry>>
+    @Query("SELECT * FROM entry WHERE bookId = :bookId AND (callRx LIKE :searchQuery OR callOp LIKE :searchQuery OR commentsRx LIKE :searchQuery OR commentsTx LIKE :searchQuery OR mode LIKE :searchQuery OR modeSub LIKE :searchQuery) ORDER BY frequency ASC, timestamp DESC")
+    fun getAllByFrequency(bookId: String, searchQuery: String) : LiveData<List<Entry>>
 
     @Query("SELECT * FROM entry WHERE bookId = :bookId ORDER BY timestamp DESC")
     suspend fun getAllNow(bookId: String) : List<Entry>

@@ -79,8 +79,8 @@ class AppRepository {
         return database.bookDao().getAll()
     }
 
-    fun getEntries(bookId: String) : Map<SortMode, LiveData<List<Entry>>> {
-        return database.entryDao().getAll(bookId)
+    fun getEntries(bookId: String, searchQuery: String) : Map<SortMode, LiveData<List<Entry>>> {
+        return database.entryDao().getAll(bookId, searchQuery)
     }
 
     fun getEntry(bookId: String, entryId: String) : LiveData<Entry?> {

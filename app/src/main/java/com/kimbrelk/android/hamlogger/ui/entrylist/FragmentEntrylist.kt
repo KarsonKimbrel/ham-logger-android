@@ -50,6 +50,7 @@ class FragmentEntrylist : Fragment {
     private fun getBookId() : String = requireArguments().getString(KEY_BOOK_ID)!!
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        viewModel.bookId = getBookId()
         val view = super.onCreateView(inflater, container, savedInstanceState)!!
         val adapter = AdapterEntries(requireContext())
         adapter.callbackEntryPressed = {
@@ -59,7 +60,7 @@ class FragmentEntrylist : Fragment {
         val layoutManager = LinearLayoutManager(context)
         view.list.layoutManager = layoutManager
         val listDivider = DividerItemDecoration(context, layoutManager.orientation)
-        viewModel.getEntries(getBookId()).observe(viewLifecycleOwner) { entries ->
+        viewModel.getEntries().observe(viewLifecycleOwner) { entries ->
             adapter.updateItems(entries)
             if (entries.isNotEmpty()) {
                 view.list.addItemDecoration(listDivider)
@@ -67,7 +68,7 @@ class FragmentEntrylist : Fragment {
                 view.list.removeItemDecoration(listDivider)
             }
         }
-        viewModel.getBook(getBookId()).observe(viewLifecycleOwner) { book ->
+        viewModel.getBook().observe(viewLifecycleOwner) { book ->
             if (book != null) {
                 adapter.updateBook(book)
                 requireActivity().title = book.title ?: resources.getString(R.string.hint_untitled_book)
@@ -85,7 +86,12 @@ class FragmentEntrylist : Fragment {
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.entries, menu)
-        val searchView = menu.findItem(R.id.action_search).actionView as SearchView
+        val searchViewItem = menu.findItem(R.id.action_search)
+        val searchView = searchViewItem.actionView as SearchView
+        if (viewModel.searchQuery.isNotEmpty()) {
+            searchViewItem.expandActionView()
+            searchView.setQuery(viewModel.searchQuery, true)
+        }
         searchView.setIconifiedByDefault(true)
         searchView.setOnQueryTextListener(
             object : SearchView.OnQueryTextListener {
@@ -94,7 +100,7 @@ class FragmentEntrylist : Fragment {
                 }
 
                 override fun onQueryTextChange(newText: String) : Boolean {
-                    // TODO update filter
+                    viewModel.searchQuery = newText
                     return true
                 }
             }
@@ -104,7 +110,7 @@ class FragmentEntrylist : Fragment {
 
     override fun onOptionsItemSelected(item: MenuItem) : Boolean {
         when (item.itemId) {
-            R.id.action_export_adi -> viewModel.adiExport(getBookId())
+            R.id.action_export_adi -> viewModel.adiExport()
             R.id.action_import_adi -> {
                 if (ContextCompat.checkSelfPermission(requireActivity(), Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
                     ActivityCompat.requestPermissions(requireActivity(), arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), Constants.Request.PERMISSION_STORAGE_EXTERNAL_READ)
@@ -139,7 +145,7 @@ class FragmentEntrylist : Fragment {
             Constants.Request.IMPORT_ADI -> {
                 if (resultCode == Activity.RESULT_OK) {
                     val uri = data!!.data!!
-                    viewModel.adiImport(requireContext(), uri, getBookId())
+                    viewModel.adiImport(requireContext(), uri)
                 }
             }
         }
