@@ -1,6 +1,11 @@
 Ham Logger Changelog
 [YYYY-MM-DD - Version]
 
+[2020-09-30 - 0.26(26) - Release]
+    Fixed critical legacy db upgrade bug that resulted in the loss of timestamps on legacy db entries
+    No longer deletes the legacy db after an upgrade
+    ADIF export will no longer make a DB call on the Main thread erroneously
+
 [2020-09-21 - 0.25(25) - Release]
     Kotlin rewrite (~95%)
     Improved ADIF import

@@ -10,8 +10,8 @@ android {
         applicationId "com.kimbrelk.android.hamlogger"
         minSdkVersion 17
         targetSdkVersion 29
-        versionCode 25
-        versionName "0.25"
+        versionCode 26
+        versionName "0.26"
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         testHandleProfiling true
