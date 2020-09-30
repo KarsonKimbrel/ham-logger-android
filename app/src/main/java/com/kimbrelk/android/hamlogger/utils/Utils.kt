@@ -10,7 +10,6 @@ import com.kimbrelk.android.hamlogger.data.model.Band
 import java.text.DateFormat
 import java.text.DecimalFormat
 import java.text.SimpleDateFormat
-import java.time.Year
 import java.util.*
 
 class Utils {
@@ -71,6 +70,11 @@ class Utils {
             return pInfo.versionName
         }
 
+        fun getAppVersionCode(context: Context) : Int {
+            val pInfo = context.packageManager.getPackageInfo(context.packageName, 0)
+            return pInfo.versionCode
+        }
+
         fun getCursorBoolean(cursor: Cursor, colName: String) : Boolean {
             val columnIndex = cursor.getColumnIndexOrThrow(colName)
             return (cursor.getIntOrNull(columnIndex) ?: 0) == 1
@@ -103,7 +107,7 @@ class Utils {
             val calendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"))
             calendar.set(year, month, day, hour, min, 0)
             val msInMin = 1000 * 60
-            return 1000000//(calendar.timeInMillis / msInMin) * msInMin
+            return (calendar.timeInMillis / msInMin) * msInMin
         }
 
         fun stringToDouble(str: String?) : Double {

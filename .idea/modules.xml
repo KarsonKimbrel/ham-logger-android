@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Dev-ham-logger.iml" filepath="$PROJECT_DIR$/Dev-ham-logger.iml" group="ham-logger" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/ham-logger.iml" filepath="$PROJECT_DIR$/ham-logger.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/ham-logger-app.iml" filepath="$PROJECT_DIR$/app/ham-logger-app.iml" group="ham-logger/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ham-logger-android.iml" filepath="$PROJECT_DIR$/.idea/modules/ham-logger-android.iml" group="ham-logger-android" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/ham-logger-android-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/ham-logger-android-app.iml" group="ham-logger-android/app" />
     </modules>
   </component>
 </project>

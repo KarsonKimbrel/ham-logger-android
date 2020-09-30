@@ -1,12 +1,17 @@
 package com.kimbrelk.android.hamlogger.data
 
 import android.content.Context
+import android.content.SharedPreferences
+import android.content.pm.PackageInfo
 import android.database.sqlite.SQLiteDatabase
+import android.os.Build
 import android.util.Log
+import androidx.browser.customtabs.CustomTabsClient.getPackageName
 import com.kimbrelk.android.hamlogger.data.model.Book
 import com.kimbrelk.android.hamlogger.data.model.Entry
 import com.kimbrelk.android.hamlogger.data.legacydatabase.LegacyDatabaseContract
 import com.kimbrelk.android.hamlogger.data.legacydatabase.LegacyDatabaseHelper
+import com.kimbrelk.android.hamlogger.utils.Constants
 import com.kimbrelk.android.hamlogger.utils.Utils
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -122,10 +127,15 @@ class LegacyDatabaseUpdater {
     }
 
     suspend fun upgradeFromLegacyDatabaseIfExists(context: Context) {
-        if (legacyDatabaseExists(context)) {
+        val prefs = context.getSharedPreferences(Constants.PREFS_NAME, Context.MODE_PRIVATE)
+        val lastLegacyDatabaseUpdate = prefs.getInt(Constants.Prefs.LEGACY_DB_LAST_UPDATE, 0)
+        if (legacyDatabaseExists(context) && lastLegacyDatabaseUpdate < 26) {
             Log.i(this::class.simpleName, "Starting legacy database upgrade")
             preformLegacyDatabaseUpgrade(context)
-            deleteLegacyDatabase(context)
+            //deleteLegacyDatabase(context)
+            prefs.edit()
+                .putInt(Constants.Prefs.LEGACY_DB_LAST_UPDATE, Utils.getAppVersionCode(context))
+                .apply()
             Log.i(this::class.simpleName, "Legacy database upgrade complete")
         }
     }

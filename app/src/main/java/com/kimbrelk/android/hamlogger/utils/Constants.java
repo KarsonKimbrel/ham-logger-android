@@ -20,6 +20,7 @@ public final class Constants {
 		public final static String LAST_MODE = "last_mode";
 		public final static String LAST_MODE_SUB = "last_mode_sub";
 		public final static String LAST_OPERATOR = "last_op";
+		public final static String LEGACY_DB_LAST_UPDATE = "legacy_db_last_update";
 		public final static String SORT_MODE = "sort_mode";
 	}
 	

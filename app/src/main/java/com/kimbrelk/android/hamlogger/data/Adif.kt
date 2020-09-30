@@ -88,10 +88,12 @@ class Adif {
         }
 
         suspend fun export(context: Context, appDatabase: AppDatabase, bookId: String) : File {
-            val book = appDatabase.bookDao().getNow(bookId)
-            val entries = appDatabase.entryDao().getAllNow(bookId)
-            val adiStr = toAdi(context, book!!, entries)
-            return writeAdiToFile(context, adiStr)
+            return withContext(Dispatchers.IO) {
+                val book = appDatabase.bookDao().getNow(bookId)
+                val entries = appDatabase.entryDao().getAllNow(bookId)
+                val adiStr = toAdi(context, book!!, entries)
+                writeAdiToFile(context, adiStr)
+            }
         }
 
         suspend fun fromAdi(strAdi: String) : List<Entry> {

@@ -2,6 +2,7 @@ package com.kimbrelk.android.hamlogger
 
 import com.kimbrelk.android.hamlogger.data.Adif
 import com.kimbrelk.android.hamlogger.data.model.AdiLexeme
+import com.kimbrelk.android.hamlogger.utils.Utils
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert
 import org.junit.Test
@@ -82,4 +83,23 @@ class AdifTests {
     private fun testImport(fileName: String) {
         Assert.assertTrue(true)
     }
+
+    @Test
+    fun testUtilsGetLegacyTimestamp() {
+        val tests = arrayOf(
+            Pair(Pair("20200923", "1223"),
+                1600863780000L),
+            Pair(Pair("19930603", "1445"),
+                739118700000L),
+            Pair(Pair("20000101", "0200"),
+                946692000000L),
+        )
+        for (test in tests) {
+            runBlocking {
+                val result = Utils.getLegacyTimestamp(test.first.first, test.first.second)
+                Assert.assertEquals(test.second, result)
+            }
+        }
+    }
+
 }
